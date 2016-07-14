@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CicadaTravels</string>
+    <string name="main_title_name">蟬遊記</string>
+    <string name="item_assist_off_line_view">离线浏览</string>
+    <string name="item_assist_feedback">反馈</string>
+    <string name="item_assist_setting">设置</string>
 </resources>

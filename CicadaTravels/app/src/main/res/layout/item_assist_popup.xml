@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <TextView
+        android:id="@+id/assist_off_line_tv"
+        android:textSize="@dimen/assist_off_line_text_size"
+        android:padding="@dimen/assist_off_line_padding"
+        android:text="@string/item_assist_off_line_view"
+        android:layout_width="@dimen/assist_off_line_width"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"/>
+    <TextView
+        android:layout_width="@dimen/assist_off_line_width"
+        android:layout_height="@dimen/assist_line_height"
+        android:background="#F1F1F1"
+        />
+    <TextView
+        android:id="@+id/assist_feedback_tv"
+        android:textSize="@dimen/assist_off_line_text_size"
+        android:padding="@dimen/assist_off_line_padding"
+        android:text="@string/item_assist_feedback"
+        android:layout_width="@dimen/assist_feedback_width"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        />
+    <TextView
+        android:layout_width="@dimen/assist_off_line_width"
+        android:layout_height="@dimen/assist_line_height"
+        android:background="#F1F1F1"
+        />
+    <TextView
+        android:id="@+id/assist_setting_tv"
+        android:textSize="@dimen/assist_setting_text_size"
+        android:padding="@dimen/assist_setting_padding"
+        android:text="@string/item_assist_setting"
+        android:layout_width="@dimen/assist_setting_width"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"/>
+
+
+</LinearLayout>

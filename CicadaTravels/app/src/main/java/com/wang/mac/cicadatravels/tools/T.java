@@ -2,8 +2,6 @@ package com.wang.mac.cicadatravels.tools;
 
 import android.widget.Toast;
 
-import com.wang.mac.cicadatravels.ui.activity.MyApp;
-
 /**
  * Created by mac on 16/7/11.
  */
