@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+<include layout="@layout/avatar_titile_bar"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+        <ImageView
+            android:id="@+id/avatar_iv"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="fitCenter"
+            android:layout_margin="5dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/avatar_name_tv"
+            android:text="11"
+            android:layout_toRightOf="@id/avatar_iv"
+            android:textSize="20sp"
+            android:layout_alignTop="@id/avatar_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/avatar_travels_count_tv"
+            android:text="22"
+            android:layout_toRightOf="@id/avatar_iv"
+            android:layout_alignBottom="@id/avatar_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/avatar_iv"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/avatar_attention_btn"
+                android:text="关注她"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/avatar_personal_letter_btn"
+                android:text="私信"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+        <TextView
+            android:textColor="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/avatar_tab_layout"
+        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/avatar_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+
+</LinearLayout>

@@ -7,7 +7,7 @@
     <dimen name="main_title_text_size">25sp</dimen>
     <dimen name="main_title_margin">10dp</dimen>
     <dimen name="main_title_linear_layout_height">50dp</dimen>
-    <dimen name="main_title_search_btn_margin">5dp</dimen>
+    <dimen name="main_title_search_btn_margin">10dp</dimen>
     <dimen name="main_title_login_register_btn_margin">5dp</dimen>
     <dimen name="main_title_assist_btn_margin">5dp</dimen>
     <dimen name="assist_off_line_text_size">20sp</dimen>
@@ -20,5 +20,17 @@
     <dimen name="assist_feedback_padding">10dp</dimen>
     <dimen name="assist_setting_padding">10dp</dimen>
     <dimen name="assist_line_height">2dp</dimen>
+    <dimen name="login_and_register_tab_layout_height">50dp</dimen>
+    <dimen name="search_tab_layout_height">50dp</dimen>
+    <dimen name="feedback_title_bar_whole_height">50dp</dimen>
+    <dimen name="main_title_bar_height">50dp</dimen>
+    <dimen name="main_title_bar_title_tv_textsize">25sp</dimen>
+    <dimen name="main_title_bar_title_tv_marginLeft">20dp</dimen>
+    <dimen name="main_title_bar_search_tv_padding">10dp</dimen>
+    <dimen name="main_title_bar_person_tv_padding">10dp</dimen>
+    <dimen name="main_title_bar_menu_tv_paddingTop">15dp</dimen>
+    <dimen name="main_title_bar_menu_tv_paddingBottom">15dp</dimen>
+    <dimen name="main_title_bar_menu_tv_paddingRight">7dp</dimen>
+    <dimen name="main_title_bar_menu_tv_paddingLeft">5dp</dimen>
 
 </resources>

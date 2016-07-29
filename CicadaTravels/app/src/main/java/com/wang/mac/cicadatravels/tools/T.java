@@ -17,12 +17,12 @@ public final class T {
 
     public static void longMsg(String msg){
         if (isDebug){
-            Toast.makeText(MyApp.getContext(), msg, Toast.LENGTH_LONG).show();
+            Toast.makeText(CicadaTravelsApp.getContext(), msg, Toast.LENGTH_LONG).show();
         }
     }
     public static void shortMsg(String msg){
         if (isDebug){
-            Toast.makeText(MyApp.getContext(), msg, Toast.LENGTH_SHORT).show();
+            Toast.makeText(CicadaTravelsApp.getContext(), msg, Toast.LENGTH_SHORT).show();
         }
     }
 

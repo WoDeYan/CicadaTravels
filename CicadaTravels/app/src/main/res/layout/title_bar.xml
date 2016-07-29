@@ -1,52 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/main_title_linear_layout_height"
-    android:background="#009AE4"
-    >
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#079DE4">
     <TextView
-        android:id="@+id/titleTv"
-        android:text="@string/main_title_name"
-        android:textSize="@dimen/main_title_text_size"
-        android:layout_margin="@dimen/main_title_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/main_title_bar_title_tv_textsize"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="@dimen/main_title_bar_title_tv_marginLeft"
+        android:gravity="center_vertical"
+        android:text="@string/main_title_name"/>
+    <ImageView
+        android:id="@+id/main_title_bar_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"/>
+        android:src="@mipmap/menu"
+        android:layout_alignParentRight="true"
+        android:paddingTop="@dimen/main_title_bar_menu_tv_paddingTop"
+        android:paddingBottom="@dimen/main_title_bar_menu_tv_paddingBottom"
+        android:paddingRight="@dimen/main_title_bar_menu_tv_paddingRight"
+        android:paddingLeft="@dimen/main_title_bar_menu_tv_paddingLeft"
+        />
+    <ImageView
+        android:id="@+id/main_title_bar_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/person"
+        android:padding="@dimen/main_title_bar_person_tv_padding"
+        android:layout_toLeftOf="@id/main_title_bar_menu"
+        />
+    <ImageView
+        android:id="@+id/main_title_bar_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/search"
+        android:padding="@dimen/main_title_bar_search_tv_padding"
+        android:layout_toLeftOf="@id/main_title_bar_person"
+        />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/title_search_btn"
-            android:layout_weight="1"
-            android:layout_margin="@dimen/main_title_search_btn_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/search"
-
-            />
-        <Button
-            android:id="@+id/title_login_and_register_btn"
-            android:layout_weight="1"
-            android:layout_margin="@dimen/main_title_login_register_btn_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/person"/>
-        <Button
-            android:id="@+id/title_assist_btn"
-            android:layout_weight="1"
-            android:layout_margin="@dimen/main_title_assist_btn_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/menu"/>
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

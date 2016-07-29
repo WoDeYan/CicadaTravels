@@ -1,4 +1,4 @@
-package com.wang.mac.cicadatravels.tools;
+package com.wang.mac.cicadatravels.model.net;
 
 import android.content.Context;
 

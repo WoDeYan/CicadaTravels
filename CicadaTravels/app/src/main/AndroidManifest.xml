@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".tools.MyApp"
+        android:name=".tools.CicadaTravelsApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,6 +17,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.SearchActivity"/>
+        <activity android:name=".ui.activity.LoginAndRegisterActivity"/>
+        <activity android:name=".ui.activity.OffLineActivity"/>
+        <activity android:name=".ui.activity.FeedbackActivity"/>
+        <activity android:name=".ui.activity.SettingActivity"/>
+        <activity android:name=".ui.activity.StrategyDetailsActivity"/>
+        <activity android:name=".ui.activity.ChoosePlaceActivity"/>
+        <activity android:name=".ui.activity.BannerDetailsActivity"/>
+        <activity android:name=".ui.activity.TravelsDetailsActivity"/>
+        <activity android:name=".ui.activity.TravelsAvatarActivity"/>
+        <activity android:name=".ui.activity.AvatarLoveDetailsActivity"/>
+        <activity android:name=".ui.activity.StrategyStrategyActivity"/>
+        <activity android:name=".ui.activity.StrategyRouteActivity"/>
+        <activity android:name=".ui.activity.StrategyTravelsActivity"/>
+        <activity android:name=".ui.activity.StrategySpecialActivity"/>
     </application>
 
 </manifest>

@@ -2,6 +2,8 @@ package com.wang.mac.cicadatravels.model.bean;
 
 /**
  * Created by mac on 16/7/13.
+ * 第一个界面游记的实体类
+ * @author wangweijian
  */
 public class TravelsBean  {
 

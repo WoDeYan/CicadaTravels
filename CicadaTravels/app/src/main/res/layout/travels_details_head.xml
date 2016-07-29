@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/travels_head_big_iv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <ImageView
+        android:id="@+id/travels_head_small_iv"
+        android:src="@mipmap/ic_launcher"
+        android:layout_alignBottom="@id/travels_head_big_iv"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/travels_head_name_tv"
+        android:layout_alignTop="@id/travels_head_small_iv"
+        android:layout_toRightOf="@id/travels_head_small_iv"
+        android:text="11111111111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/travels_head_date_tv"
+        android:layout_below="@id/travels_head_name_tv"
+        android:layout_alignBottom="@id/travels_head_small_iv"
+        android:layout_toRightOf="@id/travels_head_small_iv"
+        android:text="1111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/travels_head_days_tv"
+        android:text="222"
+        android:layout_toRightOf="@id/travels_head_date_tv"
+        android:layout_below="@id/travels_head_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/travels_head_photo_count_tv"
+        android:layout_toRightOf="@id/travels_head_days_tv"
+        android:layout_below="@id/travels_head_name_tv"
+        android:text="33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>

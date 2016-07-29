@@ -2,6 +2,8 @@ package com.wang.mac.cicadatravels.model.bean;
 
 /**
  * Created by mac on 16/7/14.
+ * 轮播图实体类
+ * @author wangweijian
  */
 public class BannerBean {
 

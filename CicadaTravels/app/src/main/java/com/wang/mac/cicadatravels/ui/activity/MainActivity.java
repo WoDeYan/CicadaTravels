@@ -1,5 +1,6 @@
 package com.wang.mac.cicadatravels.ui.activity;
 
+import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -9,10 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.wang.mac.cicadatravels.R;
 import com.wang.mac.cicadatravels.ui.adapter.MainAdapter;
+import com.wang.mac.cicadatravels.ui.fragment.SeasonsFragment;
 import com.wang.mac.cicadatravels.ui.fragment.StrategyFragment;
 import com.wang.mac.cicadatravels.ui.fragment.ToolKitFragment;
 import com.wang.mac.cicadatravels.ui.fragment.TravelsFragment;
@@ -25,8 +29,8 @@ public class MainActivity extends AbsBaseActivity implements View.OnClickListene
     private ArrayList<Fragment> data;
     private MainAdapter mainAdapter;
     private PopupWindow popupWindow;//下拉列表
-    private Button searchBtn , loginAndRegisterBtn , assistBtn;
-
+    private ImageView searchIv , loginAndRegisterIv , assistIv;//搜索,登录与注册,菜单栏
+    private TextView offLineTv,feedbackTv,settingTv;//离线浏览,反馈,设置
 
     @Override
     protected int setLayout() {
@@ -41,9 +45,10 @@ public class MainActivity extends AbsBaseActivity implements View.OnClickListene
     protected void innitView() {
         mainTabLayout=byView(R.id.main_tab_layout);
         mainViewPager=byView(R.id.main_view_pager);
-        searchBtn = byView(R.id.title_search_btn);
-        loginAndRegisterBtn = byView(R.id.title_login_and_register_btn);
-        assistBtn = byView(R.id.title_assist_btn);
+        searchIv = byView(R.id.main_title_bar_search);
+        loginAndRegisterIv = byView(R.id.main_title_bar_person);
+        assistIv = byView(R.id.main_title_bar_menu);
+
 
     }
 
@@ -58,29 +63,22 @@ public class MainActivity extends AbsBaseActivity implements View.OnClickListene
         //ViewPager与TabLayout联动
         mainTabLayout.setupWithViewPager(mainViewPager);
         //搜索的监听事件
-        searchBtn.setOnClickListener(this);
+        searchIv.setOnClickListener(this);
         //登陆和注册的监听事件
-        loginAndRegisterBtn.setOnClickListener(this);
+        loginAndRegisterIv.setOnClickListener(this);
         //辅助工具的监听事件
-        assistBtn.setOnClickListener(this);
-
-
-
-
-
-
-
-
-
-
-
+        assistIv.setOnClickListener(this);
+        //给tabLayout加颜色
+        mainTabLayout.setSelectedTabIndicatorColor(Color.argb(255,7,157,228));
+        mainTabLayout.setTabTextColors(Color.BLACK,Color.argb(255,7,157,228));
     }
     //加载fragment数据
     public void addFragment(){
         //初始化数据
         data = new ArrayList<>();
         data.add(new TravelsFragment());
-        data.add(new StrategyFragment());
+
+        data.add(StrategyFragment.getInstance());
         data.add(new ToolKitFragment());
         mainAdapter.setData(data);
     }
@@ -92,6 +90,12 @@ public class MainActivity extends AbsBaseActivity implements View.OnClickListene
         popupWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
         //获取下拉列表布局
         View view = getLayoutInflater().inflate(R.layout.item_assist_popup,null);
+        offLineTv = (TextView) view.findViewById(R.id.assist_off_line_tv);
+        feedbackTv = (TextView) view.findViewById(R.id.assist_feedback_tv);
+        settingTv = (TextView) view.findViewById(R.id.assist_setting_tv);
+        offLineTv.setOnClickListener(this);
+        feedbackTv.setOnClickListener(this);
+        settingTv.setOnClickListener(this);
         //把布局加载到popupWindow上
         popupWindow.setContentView(view);
         //点击外边可取消
@@ -104,15 +108,27 @@ public class MainActivity extends AbsBaseActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.title_search_btn:
+            case R.id.main_title_bar_search:
+                goTo(MainActivity.this,SearchActivity.class);
                 break;
-            case R.id.title_login_and_register_btn:
+            case R.id.main_title_bar_person:
+                goTo(MainActivity.this,LoginAndRegisterActivity.class);
                 break;
-            case R.id.title_assist_btn:
+            case R.id.main_title_bar_menu:
                 initPopup();
                 //设置成下拉
-                popupWindow.showAsDropDown(assistBtn);
+                popupWindow.showAsDropDown(assistIv);
                 break;
+            case R.id.assist_off_line_tv:
+                goTo(MainActivity.this,OffLineActivity.class);
+                break;
+            case R.id.assist_feedback_tv:
+                goTo(MainActivity.this,FeedbackActivity.class);
+                break;
+            case R.id.assist_setting_tv:
+                goTo(MainActivity.this,SettingActivity.class);
+                break;
+
         }
     }
 }

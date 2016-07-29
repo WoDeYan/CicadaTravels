@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView
+        android:id="@+id/avatar_whole_iv"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="center"
+        />
+    <TextView
+        android:id="@+id/avatar_name_tv"
+        android:text="111"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/avatar_date_tv"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/avatar_name_tv"
+        android:text="111"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/avatar_days_tv"
+        android:textColor="@android:color/white"
+        android:text="22"
+        android:layout_below="@id/avatar_name_tv"
+        android:layout_toRightOf="@id/avatar_date_tv"
+        android:layout_alignTop="@id/avatar_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/avatar_count_tv"
+        android:textColor="@android:color/white"
+        android:text="33"
+        android:layout_below="@id/avatar_name_tv"
+        android:layout_toRightOf="@id/avatar_days_tv"
+        android:layout_alignTop="@id/avatar_days_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

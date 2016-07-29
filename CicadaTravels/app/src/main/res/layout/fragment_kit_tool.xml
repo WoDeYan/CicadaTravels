@@ -1,6 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/original_tool_kit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/choose_next_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择下一次旅行的期许之地"
+        android:layout_centerInParent="true"
+        android:textSize="15sp"/>
+    <ImageView
+        android:layout_above="@id/choose_next_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/toolbox_empty_flag"
+        android:layout_margin="30dp"/>
+    <Button
+        android:id="@+id/open_tool_kit_btn"
+        android:text="开启工具箱"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_toolkit"
+        android:layout_below="@id/choose_next_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/show_tool_kit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:background="#EBF0F5">
+
+            <TextView
+                android:id="@+id/tool_kit_country_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="国家"
+                android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/tool_kit_show_line_iv"
+                android:layout_width="30dp"
+                android:layout_height="3dp"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/line_1px" />
+
+            <!--最高温度值-->
+            <TextView
+                android:id="@+id/max_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tool_kit_country_name"
+                android:textColor="#ff3b30"
+                android:textSize="60sp"
+                android:text="23"/>
+            <TextView
+                android:id="@+id/max_temp_du"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/max_temp"
+                android:layout_toRightOf="@id/max_temp"
+                android:textColor="#ff3b30"
+                android:textSize="30sp"
+                android:text="℃"/>
+            <!--最低温度值-->
+            <TextView
+                android:id="@+id/min_temp_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/max_temp"
+                android:layout_toLeftOf="@id/tool_kit_country_name"
+                android:textColor="#34aadc"
+                android:textSize="30sp"
+                android:text="℃"/>
+            <TextView
+                android:id="@+id/min_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/min_temp_d"
+                android:textColor="#34aadc"
+                android:textSize="60sp"
+                android:text="12"/>
+            <!--时间-->
+            <TextView
+                android:id="@+id/local_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="17dp"
+                android:textSize="16sp"
+                android:text="当地时间"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tools_fragment_translation_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="50dp"
+                android:drawableTop="@drawable/speech_translation"
+                android:text="语音翻译"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/tools_fragment_note_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="60dp"
+                android:drawableTop="@mipmap/tools_add_account_normal"
+                android:textSize="17sp"
+                android:layout_marginTop="50dp"
+                android:text="旅行记账" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="60dp"
+                android:drawableTop="@mipmap/tools_map_normal"
+                android:textSize="17sp"
+                android:text="旅行地图" />
+
+            <TextView
+                android:id="@+id/money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="50dp"
+                android:layout_marginRight="60dp"
+                android:drawableTop="@mipmap/tools_exchange_normal"
+                android:textSize="17sp"
+                android:text="实时汇率" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

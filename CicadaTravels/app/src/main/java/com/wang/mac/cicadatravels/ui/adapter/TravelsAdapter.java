@@ -1,6 +1,8 @@
 package com.wang.mac.cicadatravels.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,9 @@ import android.widget.TextView;
 import com.wang.mac.cicadatravels.R;
 import com.wang.mac.cicadatravels.model.bean.TravelsBean;
 import com.wang.mac.cicadatravels.tools.MyUniversalImageLoaderManager;
+import com.wang.mac.cicadatravels.ui.activity.TravelsAvatarActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 
@@ -21,7 +26,6 @@ public class TravelsAdapter extends BaseAdapter {
     private ArrayList<TravelsBean> travelsBean;
     private Context context;
     private final int TYPE_COMMON = 0, TYPE_INSERT = 1, TYPE_COUNT = 2;
-    private MyUniversalImageLoaderManager myUniversalImageLoaderManager;
 
 
     public TravelsAdapter(Context context) {
@@ -93,16 +97,24 @@ public class TravelsAdapter extends BaseAdapter {
 
 
         }
-        TravelsBean bean = travelsBean.get(position);
+        final TravelsBean bean = travelsBean.get(position);
         switch (type) {
             case TYPE_COMMON:
-                myUniversalImageLoaderManager = new MyUniversalImageLoaderManager();
                 holder.travelsNameTv.setText(bean.getName());
                 holder.travelsStartDateTv.setText(bean.getStart_date() + "/");
                 holder.travelsDaysTv.setText(bean.getDays() + "天");
                 holder.travelsPhotosCountTv.setText(bean.getPhotos_count() + "张");
                 MyUniversalImageLoaderManager.loadImg(bean.getFront_cover_photo_url(), holder.travelsWholeIv);
                 MyUniversalImageLoaderManager.loadImg(bean.getUser().getImage(), holder.travelsPartIv);
+                holder.travelsPartIv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, TravelsAvatarActivity.class);
+                        intent.putExtra("ids",bean.getUser().getId());
+                        context.startActivity(intent);
+
+                    }
+                });
                 break;
             case TYPE_INSERT:
                 insertHolder.oneMinuteTravels.setImageResource(R.mipmap.one);
